@@ -7,14 +7,14 @@ export const store = configureStore({
   },
 });
 
-const loadCart = () => {
+const saveCart = (state) => {
   try {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-  } catch {
-    return [];
+    localStorage.setItem("cart", JSON.stringify(state.cart.items));
+  } catch (e) {
+    console.error("Failed to save cart", e);
   }
 };
 
-const saveCart = (state) => {
-  localStorage.setItem("cart", JSON.stringify(state.items));
-};
+store.subscribe(() => {
+  saveCart(store.getState());
+});

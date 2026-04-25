@@ -1,18 +1,21 @@
 const BASE_URL = "https://dummyjson.com";
 
-export const fetchProducts = async ({ search, category }) => {
-  let url = `${BASE_URL}/products`;
+export const fetchProducts = async ({ pageParam = 0, search, category }) => {
+  const limit = 10;
+  const skip = pageParam * limit;
+
+  let url = `https://dummyjson.com/products?limit=${limit}&skip=${skip}`;
 
   if (search) {
-    url = `${BASE_URL}/products/search?q=${search}`;
+    url = `https://dummyjson.com/products/search?q=${search}&limit=${limit}&skip=${skip}`;
   }
 
   if (category) {
-    url = `${BASE_URL}/products/category/${category}`;
+    url = `https://dummyjson.com/products/category/${category}?limit=${limit}&skip=${skip}`;
   }
 
   const res = await fetch(url);
-  if (!res.ok) throw new Error("Failed to fetch products");
+  if (!res.ok) throw new Error("Failed to fetch");
 
   return res.json();
 };
