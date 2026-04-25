@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Grid, Button, Select, MenuItem } from "@mui/material";
+import { Grid, Button, Select, MenuItem, Box } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useProducts } from "../../hooks/useProducts";
 import Loading from "../ui/Loading";
@@ -18,27 +18,20 @@ export default function ProductList({ search, category }) {
 
   const [sort, setSort] = useState("");
 
-  if (isLoading) return <Loading />;
-  if (isError) return <ErrorMessage refetch={refetch} />;
-
   const products = data?.pages.flatMap((page) => page.products) || [];
 
-  let sortedProducts = [...products];
-
-  if (sort === "price-asc") {
-    sortedProducts.sort((a, b) => a.price - b.price);
-  }
-
-  if (sort === "price-desc") {
-    sortedProducts.sort((a, b) => b.price - a.price);
-  }
+  const sortedProducts = [...products].sort((a, b) => {
+    if (sort === "price-asc") return a.price - b.price;
+    if (sort === "price-desc") return b.price - a.price;
+    return 0;
+  });
 
   return (
-    <>
+    <Box sx={{ width: "100%" }}>
       <Select
         value={sort}
         onChange={(e) => setSort(e.target.value)}
-        sx={{ mb: 2 }}
+        sx={{ mb: 2, minWidth: 180 }}
       >
         <MenuItem value="">Default</MenuItem>
         <MenuItem value="price-asc">Price ↑</MenuItem>
@@ -46,18 +39,30 @@ export default function ProductList({ search, category }) {
       </Select>
 
       <Grid container spacing={2}>
-        {sortedProducts.map((product) => (
-          <Grid item xs={12} md={4} key={product.id}>
-            <ProductCard product={product} />
-          </Grid>
-        ))}
+        {isLoading &&
+          [...Array(3)].map((_, i) => (
+            <Grid item xs={12} sm={6} md={4} key={i}>
+              <Loading />
+            </Grid>
+          ))}
+
+        {!isLoading &&
+          sortedProducts.map((product) => (
+            <Grid item xs={12} sm={6} md={4} key={product.id}>
+              <ProductCard product={product} />
+            </Grid>
+          ))}
       </Grid>
 
+      {isError && <ErrorMessage refetch={refetch} />}
+
       {hasNextPage && (
-        <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-          {isFetchingNextPage ? "Loading more..." : "Load More"}
-        </Button>
+        <Box sx={{ mt: 3, textAlign: "center" }}>
+          <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+            {isFetchingNextPage ? "Loading more..." : "Load More"}
+          </Button>
+        </Box>
       )}
-    </>
+    </Box>
   );
 }
