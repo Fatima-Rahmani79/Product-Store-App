@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import loadCart from "../../app/store";
 
 const initialState = {
   items: loadCart(),
