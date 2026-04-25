@@ -3,7 +3,7 @@ export const initialState = {
   viewMode: "grid",
 };
 
-export const settingReducer = (state, action) => {
+export const settingsReducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_THEME":
       return {
