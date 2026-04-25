@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Navbar from "./Navbar";
 
 export default function Layout({ children }) {
