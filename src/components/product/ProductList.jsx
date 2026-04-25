@@ -2,13 +2,14 @@ import { Grid } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useProducts } from "../../hooks/useProducts";
 import { useSettings } from "../../context/SettingsContext";
+import Loading from "../ui/Loading";
 
 export default function ProductList() {
   const { data, isLoading, isError } = useProducts();
   const { state } = useSettings();
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Error loading products</p>;
+  if (isLoading) return <Loading />;
+  if (isError) return <ErrorMessage refetch={() => {}} />;
 
   return (
     <Grid container spacing={2}>

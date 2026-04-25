@@ -6,6 +6,7 @@ import { CssBaseline } from "@mui/material";
 import { getTheme } from "./theme/theme";
 import { useSettings } from "./context/SettingsContext";
 import Layout from "./components/layout/Layout";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 function App() {
   const { state } = useSettings();
@@ -30,6 +31,15 @@ function App() {
             element={
               <Layout>
                 <CartPage />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/product/:id"
+            element={
+              <Layout>
+                <ProductDetailsPage />
               </Layout>
             }
           />
