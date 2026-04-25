@@ -5,6 +5,7 @@ import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { getTheme } from "./theme/theme";
 import { useSettings } from "./context/SettingsContext";
+import Layout from "./components/layout/Layout";
 
 function App() {
   const { state } = useSettings();
@@ -15,8 +16,23 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <HomePage />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/cart"
+            element={
+              <Layout>
+                <CartPage />
+              </Layout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

@@ -7,13 +7,17 @@ import { selectTotalItems } from "../../features/cart/cartSelectors";
 import { useSettings } from "../../context/SettingsContext";
 import { Link } from "react-router-dom";
 
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import DarkModeIcon from "@mui/icons-material/DarkMode";
+// import LightModeIcon from "@mui/icons-material/LightMode";
+// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+// import ViewModuleIcon from "@mui/icons-material/ViewModule";
+// import ViewListIcon from "@mui/icons-material/ViewList";
 
 export default function Navbar() {
   const totalItems = useSelector(selectTotalItems);
-  const { dispatch } = useSettings();
+
+  const { state, dispatch } = useSettings();
 
   return (
     <AppBar position="static">
@@ -51,6 +55,10 @@ export default function Navbar() {
           <Badge badgeContent={totalItems} color="error">
             <ShoppingCarticon />
           </Badge>
+        </IconButton>
+
+        <IconButton onClick={() => dispatch({ type: "TOGGLE_VIEW" })}>
+          {state.viewMode === "grid" ? <ViewListIcon /> : <ViewModuleIcon />}
         </IconButton>
       </Toolbar>
     </AppBar>
