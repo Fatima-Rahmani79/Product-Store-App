@@ -1,4 +1,4 @@
-import { Grid, Button, Select, MenuItem, Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useProducts } from "../../hooks/useProducts";
 import Loading from "../ui/Loading";
@@ -26,21 +26,29 @@ export default function ProductList({ search, category, sort }) {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Grid container spacing={2}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "repeat(2, 1fr)",
+            md: "repeat(3, 1fr)",
+          },
+          gap: 2,
+        }}
+      >
         {isLoading &&
           [...Array(3)].map((_, i) => (
-            <Grid item xs={12} sm={6} md={4} key={i}>
+            <Box key={i} sx={{ width: "100%", height: "350px" }}>
               <Loading />
-            </Grid>
+            </Box>
           ))}
 
         {!isLoading &&
           sortedProducts.map((product) => (
-            <Grid item xs={12} sm={6} md={4} key={product.id}>
-              <ProductCard product={product} />
-            </Grid>
+            <ProductCard key={product.id} product={product} />
           ))}
-      </Grid>
+      </Box>
 
       {!isLoading && !isError && sortedProducts.length === 0 && (
         <Box

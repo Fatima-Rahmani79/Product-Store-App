@@ -7,7 +7,9 @@ export default function Loading() {
         borderRadius: 2,
         overflow: "hidden",
         boxShadow: 2,
-        height: "100%",
+        height: "480px",
+        marginBottom: 2,
+        padding: 1,
       }}
     >
       <Skeleton
