@@ -35,6 +35,7 @@ export default function ProductList({ search, category, sort }) {
             md: "repeat(3, 1fr)",
           },
           gap: 2,
+          m: 2,
         }}
       >
         {isLoading &&
@@ -73,8 +74,15 @@ export default function ProductList({ search, category, sort }) {
 
       {hasNextPage && (
         <Box sx={{ mt: 3, textAlign: "center" }}>
-          <Button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-            {isFetchingNextPage ? "Loading more..." : "Load More"}
+          <Button
+            variant="contained"
+            onClick={() => fetchNextPage()}
+            disabled={isFetchingNextPage}
+            sx={{
+              marginBottom: 4,
+            }}
+          >
+            {isFetchingNextPage ? "Loading more..." : "Load More Products"}
           </Button>
         </Box>
       )}

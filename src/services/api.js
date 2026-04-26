@@ -1,7 +1,7 @@
 const BASE_URL = "https://dummyjson.com";
 
 export const fetchProducts = async ({ pageParam = 0, search, category }) => {
-  const limit = 10;
+  const limit = 12;
   const skip = pageParam * limit;
 
   let url = `https://dummyjson.com/products?limit=${limit}&skip=${skip}`;
