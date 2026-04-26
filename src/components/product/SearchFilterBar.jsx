@@ -12,11 +12,14 @@ import SortRoundedIcon from "@mui/icons-material/SortRounded";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import { useEffect, useState } from "react";
 import useDebounce from "../../hooks/useDebounce";
+import useCategories from "../../hooks/useCategory";
 
 export default function SearchFilterBar({ search, category, sort, setParams }) {
   const [input, setInput] = useState(search);
 
   const debouncedSearch = useDebounce(input, 400);
+
+  const { data: categories = [], isLoading } = useCategories();
 
   useEffect(() => {
     setInput(search);
@@ -97,18 +100,18 @@ export default function SearchFilterBar({ search, category, sort, setParams }) {
         size="small"
         label="Category"
         sx={{ flex: "0 1 200px" }}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <CategoryRoundedIcon fontSize="small" />
-            </InputAdornment>
-          ),
-        }}
       >
         <MenuItem value="">All</MenuItem>
-        <MenuItem value="groceries">Groceries</MenuItem>
-        <MenuItem value="beauty">Beauty</MenuItem>
-        <MenuItem value="home-decoration">Home Decoration</MenuItem>
+
+        {isLoading ? (
+          <MenuItem disabled>Loading...</MenuItem>
+        ) : (
+          categories.map((cat) => (
+            <MenuItem key={cat.slug} value={cat.slug}>
+              {cat.name}
+            </MenuItem>
+          ))
+        )}
       </TextField>
 
       {/* Sort */}
