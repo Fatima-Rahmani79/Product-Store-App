@@ -7,6 +7,7 @@ import { getTheme } from "./theme/theme";
 import { useSettings } from "./context/SettingsContext";
 import Layout from "./components/layout/Layout";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const { state } = useSettings();
@@ -15,6 +16,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Toaster position="bottom-center" />
       <BrowserRouter>
         <Routes>
           <Route

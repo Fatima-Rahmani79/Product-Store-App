@@ -17,6 +17,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 export default function ProductCard({ product }) {
   const queryClient = useQueryClient();
@@ -144,7 +145,10 @@ export default function ProductCard({ product }) {
           <Stack spacing={1}>
             <Button
               variant="contained"
-              onClick={() => dispatch(addToCart(product))}
+              onClick={() => {
+                dispatch(addToCart(product));
+                toast.success("Added to cart 🛒");
+              }}
               fullWidth
               startIcon={<AddShoppingCartIcon />}
               sx={{ textTransform: "none", fontWeight: 600 }}
