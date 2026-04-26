@@ -7,16 +7,18 @@ export default function HomePage() {
 
   const search = params.get("search") || "";
   const category = params.get("category") || "";
+  const sort = params.get("sort") || "";
 
   return (
     <>
       <SearchFilterBar
         search={search}
         category={category}
-        onChange={setParams}
+        sort={sort}
+        setParams={setParams}
       />
 
-      <ProductList search={search} category={category} />
+      <ProductList search={search} category={category} sort={sort} />
     </>
   );
 }

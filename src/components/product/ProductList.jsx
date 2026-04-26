@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Grid, Button, Select, MenuItem, Box } from "@mui/material";
+import { Grid, Button, Select, MenuItem, Box, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
 import { useProducts } from "../../hooks/useProducts";
 import Loading from "../ui/Loading";
 import ErrorMessage from "../ui/ErrorMessage";
+import SearchOffIcon from "@mui/icons-material/SearchOff";
 
-export default function ProductList({ search, category }) {
+export default function ProductList({ search, category, sort }) {
   const {
     data,
     isLoading,
@@ -15,8 +15,6 @@ export default function ProductList({ search, category }) {
     isFetchingNextPage,
     refetch,
   } = useProducts({ search, category });
-
-  const [sort, setSort] = useState("");
 
   const products = data?.pages.flatMap((page) => page.products) || [];
 
@@ -28,16 +26,6 @@ export default function ProductList({ search, category }) {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Select
-        value={sort}
-        onChange={(e) => setSort(e.target.value)}
-        sx={{ mb: 2, minWidth: 180 }}
-      >
-        <MenuItem value="">Default</MenuItem>
-        <MenuItem value="price-asc">Price ↑</MenuItem>
-        <MenuItem value="price-desc">Price ↓</MenuItem>
-      </Select>
-
       <Grid container spacing={2}>
         {isLoading &&
           [...Array(3)].map((_, i) => (
@@ -53,6 +41,25 @@ export default function ProductList({ search, category }) {
             </Grid>
           ))}
       </Grid>
+
+      {!isLoading && !isError && sortedProducts.length === 0 && (
+        <Box
+          sx={{
+            textAlign: "center",
+            mt: 6,
+            color: "text.secondary",
+          }}
+        >
+          <SearchOffIcon sx={{ fontSize: 60, mb: 2, opacity: 0.6 }} />
+          <Typography variant="h6" sx={{ mb: 1 }}>
+            No products found
+          </Typography>
+
+          <Typography variant="body2">
+            Try changing your search or filters
+          </Typography>
+        </Box>
+      )}
 
       {isError && <ErrorMessage refetch={refetch} />}
 
