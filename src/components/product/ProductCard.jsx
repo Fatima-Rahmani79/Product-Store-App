@@ -58,7 +58,7 @@ export default function ProductCard({ product }) {
       <Box
         sx={{
           position: "relative",
-          height: 200,
+          height: 300,
           p: 2,
           display: "flex",
           alignItems: "center",

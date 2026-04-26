@@ -20,7 +20,7 @@ export default function Navbar() {
   const { state, dispatch } = useSettings();
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Toolbar>
         <Typography
           variant="h6"
@@ -32,12 +32,11 @@ export default function Navbar() {
         </Typography>
 
         {/* Toggle Theme */}
-
         <IconButton
           color="inherit"
           onClick={() => dispatch({ type: "TOGGLE_THEME" })}
         >
-            {state.theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+          {state.theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
 
         {/* Cart */}
@@ -48,7 +47,11 @@ export default function Navbar() {
         </IconButton>
 
         <IconButton onClick={() => dispatch({ type: "TOGGLE_VIEW" })}>
-          {state.viewMode === "grid" ? <ViewListIcon /> : <ViewModuleIcon />}
+          {state.viewMode === "grid" ? (
+            <ViewListIcon sx={{ color: "white" }} />
+          ) : (
+            <ViewModuleIcon sx={{ color: "white" }} />
+          )}
         </IconButton>
       </Toolbar>
     </AppBar>

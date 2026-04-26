@@ -4,6 +4,7 @@ import { useProducts } from "../../hooks/useProducts";
 import Loading from "../ui/Loading";
 import ErrorMessage from "../ui/ErrorMessage";
 import SearchOffIcon from "@mui/icons-material/SearchOff";
+import { useSettings } from "../../context/SettingsContext";
 
 export default function ProductList({ search, category, sort }) {
   const {
@@ -17,6 +18,8 @@ export default function ProductList({ search, category, sort }) {
   } = useProducts({ search, category });
 
   const products = data?.pages.flatMap((page) => page.products) || [];
+  const { state } = useSettings();
+  const isGrid = state.viewMode === "grid";
 
   const sortedProducts = [...products].sort((a, b) => {
     if (sort === "price-asc") return a.price - b.price;
@@ -31,9 +34,12 @@ export default function ProductList({ search, category, sort }) {
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
-            sm: "repeat(2, 1fr)",
-            md: "repeat(3, 1fr)",
+            sm: isGrid ? "repeat(2, 1fr)" : "1fr",
+            md: isGrid ? "repeat(3, 1fr)" : "1fr",
           },
+          gridTemplateRows: isGrid
+            ? "auto"
+            : "repeat(auto-fill, minmax(350px, 1fr))",
           gap: 2,
           m: 2,
         }}
