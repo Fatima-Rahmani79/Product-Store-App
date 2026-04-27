@@ -25,7 +25,7 @@ export const getTheme = (mode) =>
 
             background: {
               default: "#0f172a",
-              paper: "#1e293b",
+              paper: "#0d2d61ac",
             },
 
             text: {
