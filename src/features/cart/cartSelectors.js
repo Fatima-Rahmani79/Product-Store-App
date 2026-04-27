@@ -3,3 +3,5 @@ export const selectTotalItems = (state) =>
 
 export const selectTotalPrice = (state) =>
   state.cart.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+export const selectCartItems = (state) => state.cart.items;
