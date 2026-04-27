@@ -154,9 +154,9 @@ export default function ProductCard({ product }) {
               sx={{
                 mt: 1,
                 fontWeight: 700,
-                background: "linear-gradient(135deg, #6366f1, #06b6d4)",
+                background: "linear-gradient(135deg, #478cb4, #7bdbcd)",
                 "&:hover": {
-                  background: "linear-gradient(135deg, #4f46e5, #0891b2)",
+                  background: "linear-gradient(135deg, #4985a7, #389486)",
                 },
               }}
             >

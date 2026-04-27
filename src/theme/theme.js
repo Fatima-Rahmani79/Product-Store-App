@@ -6,8 +6,8 @@ export const getTheme = (mode) =>
       mode,
       ...(mode === "light"
         ? {
-            primary: { main: "#4f46e5" }, // indigo modern
-            secondary: { main: "#06b6d4" },
+            primary: { main: "#4985a7" }, // indigo modern
+            secondary: { main: "#49bdab" },
 
             background: {
               default: "#f8fafc",
@@ -20,12 +20,12 @@ export const getTheme = (mode) =>
             },
           }
         : {
-            primary: { main: "#818cf8" },
-            secondary: { main: "#22d3ee" },
+            primary: { main: "#1fb69f" },
+            secondary: { main: "#1b5476" },
 
             background: {
               default: "#0f172a",
-              paper: "#1e293b", // مهم: کارت ها جدا میشن
+              paper: "#1e293b",
             },
 
             text: {
