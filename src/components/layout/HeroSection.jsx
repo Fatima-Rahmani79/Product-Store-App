@@ -40,15 +40,6 @@ function HeroSection() {
         <Typography sx={{ mb: 3, color: "rgba(255,255,255,0.8)" }}>
           Browse, search, and find the best deals instantly.
         </Typography>
-
-        <Button
-          variant="contained"
-          sx={{
-            background: "linear-gradient(135deg, #6366f1, #06b6d4)",
-          }}
-        >
-          Start Shopping
-        </Button>
       </Box>
     </Box>
   );

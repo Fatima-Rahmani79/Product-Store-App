@@ -41,7 +41,7 @@ export default function ProductList({ search, category, sort }) {
             ? "auto"
             : "repeat(auto-fill, minmax(350px, 1fr))",
           gap: 2,
-          m: 2,
+          my: 2,
         }}
       >
         {isLoading &&
