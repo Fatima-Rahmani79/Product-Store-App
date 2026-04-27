@@ -10,8 +10,8 @@ export const getTheme = (mode) =>
             secondary: { main: "#49bdab" },
 
             background: {
-              default: "rgba(161, 215, 211, 0.3)",
-              paper: "rgba(244, 253, 253, 0.37)",
+              default: "rgba(182, 229, 226, 0.23)",
+              paper: "rgba(250, 250, 250, 0.37)",
             },
 
             text: {
