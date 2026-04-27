@@ -60,7 +60,7 @@ export default function SearchFilterBar({ search, category, sort, setParams }) {
         my: 3,
         borderRadius: 2,
         display: "flex",
-        alignItems: "center",
+        alignitems: "center",
         gap: 2,
         flexWrap: "wrap",
       }}
@@ -72,7 +72,7 @@ export default function SearchFilterBar({ search, category, sort, setParams }) {
         placeholder="Search products..."
         size="small"
         sx={{ flex: "1 1 280px", minWidth: 240 }}
-        InputProps={{
+        inputprops={{
           startAdornment: (
             <InputAdornment position="start">
               <SearchRoundedIcon />
@@ -122,7 +122,7 @@ export default function SearchFilterBar({ search, category, sort, setParams }) {
         size="small"
         label="Sort"
         sx={{ flex: "0 1 180px" }}
-        InputProps={{
+        inputprops={{
           startAdornment: (
             <InputAdornment position="start">
               <SortRoundedIcon fontSize="small" />

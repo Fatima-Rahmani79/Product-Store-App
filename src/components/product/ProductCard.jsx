@@ -61,7 +61,7 @@ export default function ProductCard({ product }) {
           height: 300,
           p: 2,
           display: "flex",
-          alignItems: "center",
+          alignitems: "center",
           justifyContent: "center",
           backgroundColor: theme.palette.action.hover,
         }}
@@ -116,7 +116,7 @@ export default function ProductCard({ product }) {
           {product.title}
         </Typography>
 
-        <Stack direction="row" alignItems="center" spacing={1}>
+        <Stack direction="row" alignitems="center" spacing={1}>
           <Rating
             value={product.rating}
             precision={0.1}
