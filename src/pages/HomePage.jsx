@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import HeroSection from "../components/layout/HeroSection";
 import SearchFilterBar from "../components/product/SearchFilterBar";
 import ProductList from "../components/product/ProductList";
 
@@ -11,6 +12,7 @@ export default function HomePage() {
 
   return (
     <>
+      <HeroSection />
       <SearchFilterBar
         search={search}
         category={category}
