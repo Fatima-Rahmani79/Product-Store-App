@@ -26,10 +26,16 @@ export default function Navbar() {
     <AppBar position="sticky">
       <Toolbar>
         <Typography
-          variant="h6"
+          variant="h4"
           component={Link}
           to="/"
-          sx={{ flexGrow: 1, textDecoration: "none", color: "inherit" }}
+          sx={{
+            flexGrow: 1,
+            textDecoration: "none",
+            color: "inherit",
+            fontWeight: "bold",
+            margin: 2,
+          }}
         >
           Product Store
         </Typography>

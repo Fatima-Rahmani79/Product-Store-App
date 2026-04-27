@@ -151,7 +151,14 @@ export default function ProductCard({ product }) {
               }}
               fullWidth
               startIcon={<AddShoppingCartIcon />}
-              sx={{ textTransform: "none", fontWeight: 600 }}
+              sx={{
+                mt: 1,
+                fontWeight: 700,
+                background: "linear-gradient(135deg, #6366f1, #06b6d4)",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #4f46e5, #0891b2)",
+                },
+              }}
             >
               Add to Cart
             </Button>
@@ -162,7 +169,10 @@ export default function ProductCard({ product }) {
               variant="outlined"
               fullWidth
               startIcon={<InfoOutlinedIcon />}
-              sx={{ textTransform: "none", fontWeight: 600 }}
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
+              }}
             >
               View Details
             </Button>
