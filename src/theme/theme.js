@@ -63,5 +63,48 @@ export const getTheme = (mode) =>
           },
         },
       },
+
+      /* ✅ این بخش اضافه شد */
+      MuiMenu: {
+        styleOverrides: {
+          paper: ({ theme }) => ({
+            backgroundColor:
+              theme.palette.mode === "dark" ? "#1e1e1e" : "#ffffff",
+            color: theme.palette.text.primary,
+            borderRadius: 8,
+            marginTop: 4,
+          }),
+        },
+      },
+
+      MuiMenuItem: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            borderRadius: 6,
+            margin: "2px 6px",
+
+            "&:hover": {
+              backgroundColor:
+                theme.palette.mode === "dark"
+                  ? "rgba(255,255,255,0.08)"
+                  : "rgba(0,0,0,0.05)",
+            },
+
+            "&.Mui-selected": {
+              backgroundColor:
+                theme.palette.mode === "dark"
+                  ? "rgba(255,255,255,0.12)"
+                  : "rgba(0,0,0,0.08)",
+            },
+
+            "&.Mui-selected:hover": {
+              backgroundColor:
+                theme.palette.mode === "dark"
+                  ? "rgba(255,255,255,0.16)"
+                  : "rgba(0,0,0,0.12)",
+            },
+          }),
+        },
+      },
     },
   });
