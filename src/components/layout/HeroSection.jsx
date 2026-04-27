@@ -4,8 +4,8 @@ function HeroSection() {
     <Box
       sx={{
         height: { xs: 260, md: 400 },
-        mt: 3,
-        mb: 4,
+        mt: 1,
+        mb: 1,
         px: { xs: 3, md: 6 },
         display: "flex",
         flexDirection: "column",
@@ -17,9 +17,9 @@ function HeroSection() {
 
         backgroundImage:
           "url(https://images.unsplash.com/photo-1664455340023-214c33a9d0bd?q=80&w=2064&auto=format&fit=crop)",
-        backgroundSize: "cover", // 🔥 مهم
-        backgroundPosition: "center", // 🔥 مهم
-        backgroundRepeat: "no-repeat", // 🔥 مهم
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Box
