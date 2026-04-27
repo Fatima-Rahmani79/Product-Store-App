@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { selectTotalItems } from "../../features/cart/cartSelectors";
 import { useSettings } from "../../context/SettingsContext";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -18,6 +19,8 @@ export default function Navbar() {
   const totalItems = useSelector(selectTotalItems);
 
   const { state, dispatch } = useSettings();
+
+  const location = useLocation();
 
   return (
     <AppBar position="sticky">
@@ -46,13 +49,15 @@ export default function Navbar() {
           </Badge>
         </IconButton>
 
-        <IconButton onClick={() => dispatch({ type: "TOGGLE_VIEW" })}>
-          {state.viewMode === "grid" ? (
-            <ViewListIcon sx={{ color: "white" }} />
-          ) : (
-            <ViewModuleIcon sx={{ color: "white" }} />
-          )}
-        </IconButton>
+        {location.pathname === "/" && (
+          <IconButton onClick={() => dispatch({ type: "TOGGLE_VIEW" })}>
+            {state.viewMode === "grid" ? (
+              <ViewListIcon sx={{ color: "white" }} />
+            ) : (
+              <ViewModuleIcon sx={{ color: "white" }} />
+            )}
+          </IconButton>
+        )}
       </Toolbar>
     </AppBar>
   );
