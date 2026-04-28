@@ -1,7 +1,6 @@
-import { createContext, useReducer, useContext } from "react";
+import { useReducer } from "react";
 import { settingsReducer, initialState } from "./settingsReducer";
-
-const SettingsContext = createContext();
+import { SettingsContext } from "./settingsContext";
 
 export const SettingsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(settingsReducer, initialState);
@@ -12,5 +11,3 @@ export const SettingsProvider = ({ children }) => {
     </SettingsContext.Provider>
   );
 };
-
-export const useSettings = () => useContext(SettingsContext);

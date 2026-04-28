@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { getTheme } from "./theme/theme";
-import { useSettings } from "./context/SettingsContext";
+import { useSettings } from "./hooks/useSettings";
 import { Toaster } from "react-hot-toast";
 import AppRoutes from "./routes/AppRoutes";
 

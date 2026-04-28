@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 
 import { useSelector } from "react-redux";
 import { selectTotalItems } from "../../features/cart/cartSelectors";
-import { useSettings } from "../../context/SettingsContext";
+import { useSettings } from "../../hooks/useSettings";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 

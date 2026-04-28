@@ -4,7 +4,7 @@ import { useProducts } from "../../hooks/useProducts";
 import Loading from "../ui/Loading";
 import ErrorMessage from "../ui/ErrorMessage";
 import SearchOffIcon from "@mui/icons-material/SearchOff";
-import { useSettings } from "../../context/SettingsContext";
+import { useSettings } from "../../hooks/useSettings";
 
 export default function ProductList({ search, category, sort }) {
   const {
