@@ -1,6 +1,6 @@
 ### Demo Video
 
-![Demo Video](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/Product%20Store.gif)
+![Demo Video](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/Product%20Store.gif)
 
 # Product Store App
 
@@ -31,6 +31,10 @@ A modern, responsive e-commerce product store application built with React. This
 - **ESLint**: Code linting for maintaining code quality.
 
 ## ScreenShotes
+
+![Hompe page](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/HomePage.png)
+![Card Details](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/CardDetails.png)
+![Cart Page](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/CartPage.png)
 
 ## Steps to Run the Project
 
