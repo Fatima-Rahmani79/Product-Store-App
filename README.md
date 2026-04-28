@@ -30,6 +30,8 @@ A modern, responsive e-commerce product store application built with React. This
 - **React Hot Toast**: Notifications for user feedback.
 - **ESLint**: Code linting for maintaining code quality.
 
+## ScreenShotes
+
 ## Steps to Run the Project
 
 1. **Clone the repository**:
