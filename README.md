@@ -1,6 +1,6 @@
 ### Demo Video
 
-![Demo Video](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/demo.gif)
+![Demo Video](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/Product%20Store.gif)
 
 # Product Store App
 
