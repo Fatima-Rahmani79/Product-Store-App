@@ -1,16 +1,65 @@
-# React + Vite
+# Product Store App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Short Description
 
-Currently, two official plugins are available:
+A modern, responsive e-commerce product store application built with React. This app allows users to browse products, view detailed information, add items to a cart, and manage their shopping experience with search and filtering capabilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Product Browsing**: Display a list of products with detailed cards showing images, prices, and descriptions.
+- **Product Details**: Dedicated page for viewing individual product information.
+- **Shopping Cart**: Add, remove, and manage items in the cart with persistent storage.
+- **Search and Filter**: Real-time search with debounced input and category filtering.
+- **Responsive Design**: Optimized for desktop and mobile devices.
+- **Loading States and Error Handling**: Skeleton loaders and error messages for better UX.
+- **Settings Context**: Manage app settings (e.g., theme preferences).
+- **Toast Notifications**: User feedback for actions like adding to cart.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Screenshots
 
-## Expanding the ESLint configuration
+_(Add screenshots of the app here. For example:)_
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Home page with product list
+- Product details page
+- Cart page
+- Mobile view
+
+## Tools/Libraries Used
+
+- **React**: Frontend library for building the user interface.
+- **Vite**: Build tool for fast development and bundling.
+- **Redux Toolkit**: State management for cart and app settings.
+- **React Router DOM**: Client-side routing for navigation.
+- **Material-UI (MUI)**: Component library for UI elements and icons.
+- **TanStack React Query**: Data fetching and caching for API calls.
+- **React Hot Toast**: Notifications for user feedback.
+- **ESLint**: Code linting for maintaining code quality.
+
+## Steps to Run the Project
+
+1. **Clone the repository**:
+
+   ```
+   git clone https://github.com/Fatima-Rahmani79/Product-Store-App.git
+   cd Product-Store-App
+   ```
+
+2. **Install dependencies**:
+
+   ```
+   npm install
+   ```
+
+3. **Start the development server**:
+
+   ```
+   npm run dev
+   ```
+
+4. **Open your browser** and navigate to `http://localhost:5173` (or the port shown in the terminal).
+
+5. **Build for production** (optional):
+   ```
+   npm run build
+   npm run preview
+   ```

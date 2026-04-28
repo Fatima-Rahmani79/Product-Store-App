@@ -10,7 +10,7 @@ export const getTheme = (mode) =>
             secondary: { main: "#49bdab" },
 
             background: {
-              default: "rgba(182, 229, 226, 0.23)",
+              default: "rgba(179, 218, 215, 0.23)",
               paper: "rgba(250, 250, 250, 0.37)",
             },
 
@@ -64,7 +64,6 @@ export const getTheme = (mode) =>
         },
       },
 
-      /* ✅ این بخش اضافه شد */
       MuiMenu: {
         styleOverrides: {
           paper: ({ theme }) => ({
