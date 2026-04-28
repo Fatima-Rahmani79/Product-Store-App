@@ -63,10 +63,16 @@ function OrderSummary({ totalItems, totalPrice, onClear, disabled }) {
       <Divider sx={{ my: 2.5 }} />
 
       <Button
-        fullWidth
         variant="contained"
         size="large"
-        sx={{ mb: 1.2, textTransform: "none", fontWeight: 700 }}
+        sx={{
+          display: "block",
+          width: "50%",
+          textTransform: "none",
+          fontWeight: 700,
+          margin: "0 auto",
+          marginBottom: 1.2,
+        }}
         disabled={disabled}
         onClick={() => {
           toast.success("Order placed successfully :)");
@@ -76,13 +82,18 @@ function OrderSummary({ totalItems, totalPrice, onClear, disabled }) {
       </Button>
 
       <Button
-        fullWidth
         variant="outlined"
         color="error"
         size="large"
         onClick={onClear}
         disabled={disabled}
-        sx={{ textTransform: "none", fontWeight: 700 }}
+        sx={{
+          display: "block",
+          width: "50%",
+          textTransform: "none",
+          fontWeight: 700,
+          margin: "0 auto",
+        }}
       >
         Clear Cart
       </Button>
