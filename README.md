@@ -1,3 +1,7 @@
+### Demo Video
+
+![Demo Video](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/demo.gif)
+
 # Product Store App
 
 ## Short Description
@@ -14,10 +18,6 @@ A modern, responsive e-commerce product store application built with React. This
 - **Loading States and Error Handling**: Skeleton loaders and error messages for better UX.
 - **Settings Context**: Manage app settings (e.g., theme preferences).
 - **Toast Notifications**: User feedback for actions like adding to cart.
-
-### Demo Video
-
-![Demo Video](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/demo.gif)
 
 ## Tools/Libraries Used
 
