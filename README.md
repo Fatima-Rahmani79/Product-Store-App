@@ -15,14 +15,9 @@ A modern, responsive e-commerce product store application built with React. This
 - **Settings Context**: Manage app settings (e.g., theme preferences).
 - **Toast Notifications**: User feedback for actions like adding to cart.
 
-### Screenshots
+### Demo Video
 
-_(Add screenshots of the app here. For example:)_
-
-- Home page with product list
-- Product details page
-- Cart page
-- Mobile view
+![Demo Video](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/demo.gif)
 
 ## Tools/Libraries Used
 
