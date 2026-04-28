@@ -32,9 +32,14 @@ A modern, responsive e-commerce product store application built with React. This
 
 ## ScreenShotes
 
-![Hompe page](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/HomePage.png)
-![Card Details](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/CardDetails.png)
-![Cart Page](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/CartPage.png)
+- **Hompe page**:
+  ![Hompe page](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/HomePage.png)
+
+- **Card Details**:
+  ![Card Details](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/CardDetails.png)
+
+- **Cart Page**:
+  ![Cart Page](https://github.com/Fatima-Rahmani79/Product-Store-App/blob/main/public/CartPage.png)
 
 ## Steps to Run the Project
 
