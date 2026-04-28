@@ -104,10 +104,11 @@ export default function CartPage() {
     <Box
       sx={{
         p: { xs: 2, md: 3 },
-        display: "grid",
-        gridTemplateColumns: { xs: "1fr", md: "2fr 1fr" },
-        gap: 3,
-        alignItems: "start",
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        width: "80%",
+        margin: "0 auto",
       }}
     >
       <Box>

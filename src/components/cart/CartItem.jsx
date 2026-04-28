@@ -5,6 +5,7 @@ import {
   Stack,
   Avatar,
   Box,
+  useTheme,
 } from "@mui/material";
 
 import DeleteOutlined from "@mui/icons-material/DeleteOutlined";
@@ -12,6 +13,7 @@ import Add from "@mui/icons-material/Add";
 import Remove from "@mui/icons-material/Remove";
 
 export default function CartItem({ item, onIncrease, onDecrease, onRemove }) {
+  const theme = useTheme();
   return (
     <Paper
       sx={{
@@ -24,8 +26,10 @@ export default function CartItem({ item, onIncrease, onDecrease, onRemove }) {
         border: "1px solid",
         borderColor: "divider",
         transition: "0.25s",
-        background:
-          "linear-gradient(145deg, rgba(255,255,255,0.03), transparent)",
+        bgcolor:
+          theme.palette.mode === "dark"
+            ? "background.default"
+            : "background.paper",
 
         "&:hover": {
           boxShadow: 6,
@@ -78,7 +82,9 @@ export default function CartItem({ item, onIncrease, onDecrease, onRemove }) {
           <Remove />
         </IconButton>
 
-        <Typography sx={{ fontWeight: 700 }}>{item.quantity}</Typography>
+        <Typography sx={{ fontWeight: 700, alignSelf: "center" }}>
+          {item.quantity}
+        </Typography>
 
         <IconButton onClick={onIncrease} size="small">
           <Add />
